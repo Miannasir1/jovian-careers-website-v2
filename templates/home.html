@@ -1,47 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    
     <title>Portofolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <style>
-      h1{
-        font-size:80px;
-        font-family: Roboto;
-        font-weight:normal;
-        color:rgb(180,50,50);
-        text-align:center;
-      }
       #banner{
+        height:250px;
         width:100%;
-        height:150px;
-      }
-      h2{
-        font-size:40px;
-        font-family: Roboto;
-        font-weight:normal;
-        color:rgb(100,120,50);
-        text-align:center;
-
-      }
-      .bodytext{
-        font-family: Roboto;
-        color:rgb(100,120,50);
-
-      }
-      #container{
-        max-width:720px;
-        margin:0 auto 0 auto ;
       }
 
 
       
     </style>
+
+    
   </head>
   <body>
-    <div id = "container">
-    <h1>My portfolio</h1>
-    <img id = "banner"  src= "https://portfolio.miannasir1.repl.co/static/banner.jpg" >
-    <h2>About My Portfolio</h2>
-    <p class = 'bodytext'>As an AI language model, I don't have access to your personal information or portfolio. However, I can provide you with a general outline and suggestions for creating a portfolio as a web developer using Flask and Python.
+    <div class = "container">
+    <h1 class="text-center mt-2 mb-4">{{company_name}} portfolio</h1>
+    <img class='img-fluid' id='banner' src= "https://portfolio.miannasir1.repl.co/static/banner.jpg" >
+    <h2 class="text-center" mt-2 mb-4>About My Portfolio</h2>
+    <p class ="lead">As an AI language model, I don't have access to your personal information or portfolio. However, I can provide you with a general outline and suggestions for creating a portfolio as a web developer using Flask and Python.
 
 A portfolio showcases your skills, projects, and experience as a web developer. It allows potential employers or clients to see your work and assess your abilities. Here's a suggested structure for your portfolio:
 
@@ -55,11 +38,18 @@ A portfolio showcases your skills, projects, and experience as a web developer. 
    Display snippets of your code that demonstrate your programming skills and expertise. These snippets could be from your projects or personal experiments. Explain the context and the problem you were solving with each code sample.
 
 </p>
-    <h2 >Open Positions</h2>
-    <p class = 'bodytext'>Todo show the me your portfolio</p>
-      <div style="text-align:center">
-    <button>Contact us</button>
-        <p>&copy Copyright 2022, Nasir</p>
+    <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+    <p>
+      {% for job in jobs %}
+
+     {% include 'jobitems.html' %}
+
+
+      {% endfor %}
+    </p>
+      <div class = "text-center">
+    <button class="btn btn-primary btn-lg">Contact us</button>
+        <p class="text-center">&copy Copyright 2022, Nasir</p>
       </div>
      
   </div>
