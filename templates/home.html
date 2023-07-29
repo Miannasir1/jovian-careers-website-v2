@@ -20,24 +20,25 @@
     
   </head>
   <body>
+    {% include "nav.html"%}
     <div class = "container">
     <h1 class="text-center mt-2 mb-4">{{company_name}} portfolio</h1>
     <img class='img-fluid' id='banner' src= "https://portfolio.miannasir1.repl.co/static/banner.jpg" >
     <h2 class="text-center" mt-2 mb-4>About My Portfolio</h2>
-    <p class ="lead">As an AI language model, I don't have access to your personal information or portfolio. However, I can provide you with a general outline and suggestions for creating a portfolio as a web developer using Flask and Python.
+      <div class = 'row'>
+      <div class = 'col-md-6'>
+    <p class ="lead">
+      As an AI language model, I don't have access to your personal information or portfolio. However, I can provide you with a general outline and suggestions for creating a portfolio as a web developer using Flask and Python.
 
 A portfolio showcases your skills, projects, and experience as a web developer. It allows potential employers or clients to see your work and assess your abilities. Here's a suggested structure for your portfolio:
-
-1. **Introduction and About Me:**
-   Provide a brief introduction of yourself and your background as a web developer. Mention your skills, experience, and what makes you passionate about web development.
-
-2. **Projects:**
-   Showcase the web development projects you've worked on. Include a mix of personal projects and any professional work you've done. For each project, provide a description, technologies used, your role, and a link to view the project (if possible).
-
-3. **Code Samples:**
-   Display snippets of your code that demonstrate your programming skills and expertise. These snippets could be from your projects or personal experiments. Explain the context and the problem you were solving with each code sample.
+      It allows potential employers or clients to see your work and assess your abilities. Here's a suggested structure for your portfolio:
 
 </p>
+     </div>
+      <div class = 'd-none d-md-block col-md-6'>
+        <img src ='/static/pepole.jpeg' style= "height:300px">
+      </div>
+      </div>
     <h2 class="text-center mt-2 mb-4">Open Positions</h2>
     <p>
       {% for job in jobs %}
@@ -48,10 +49,11 @@ A portfolio showcases your skills, projects, and experience as a web developer. 
       {% endfor %}
     </p>
       <div class = "text-center">
-    <button class="btn btn-primary btn-lg">Contact us</button>
-        <p class="text-center">&copy Copyright 2022, Nasir</p>
+    <a href="mailto:hello@nasir.ai?subject=How%20may%20I%20help%20you&body=My%20name%3A%20%3CYour%20name%20here%3E%0D%0A%0D%0AMy%20Question%3A%20%3Cyour%20question%20here%3E" class="btn btn-primary btn-lg">Contact us</a>
+        
       </div>
      
   </div>
+    {% include 'footer.html' %}
   </body>
 </html>
